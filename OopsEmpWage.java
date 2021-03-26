@@ -1,66 +1,49 @@
 ///"Welcome to Eployee Wage Computation"
-import java.util.*;
+import java.util.Random;
+public class OopsEmpWage{
 
-public class OopsEmpWage
-{
-		static int WorkingHrs=0;
-		static int WagePerHr=20;
-		static int Full_Time=8;
-		static int Part_Time=4;
-		static int TotalWorkingDays=20;
-
-			public static int attendance()
+			public static int WorkingHrs=0;
+			public static int calculateEmpWage(String company, int Full_Time,
+			 int Part_Time, int WagePerHr, int totalWorkingDays, int totalWorkingHrs)
 			{
-				Random emp = new Random();
-				int attend=(int)(Math.floor(Math.random()*10)%3);
-				return attend;
-			}
+					int attend=(int)(Math.floor(Math.random()*10)%3);
+					int WorkingDays=1;
 
-			public static void EmployeeWageCal()
-			{
-
-				System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
-
-			}
-
-
-			public void EmpCheck()
-			{
-				int WorkingDays=0;
-				while((WorkingDays<=TotalWorkingDays)&&(WorkingHrs<100))
-				{
-					WorkingDays++;
-					int check=attendance();
-
-					switch(check)
+					while((WorkingDays<=totalWorkingDays)&&(WorkingHrs<totalWorkingHrs))
 					{
-							case 0:
-									WorkingHrs+=Full_Time;
-									break;
+
+						WorkingDays++;
+						int check=attend;
+
+						switch(check)
+						{
+								case 0://fulltime
+										WorkingHrs+=Full_Time;
+										break;
 
 
-							case 1:
-									WorkingHrs+=Part_Time;
-									break;
+								case 1://part time
+										WorkingHrs+=Part_Time;
+										break;
 
-							case 2:
-									System.out.println("Employee is Absent");
-									break;
+								case 2://for absent
+										break;
 
-							default:
-									System.out.println("Invalid");
-									break;
+								default:
+										System.out.println("Invalid");
+										break;
+						}
 					}
+
+					int totalWage=WorkingHrs*WagePerHr;
+					System.out.println("Total Wage of an Employee in company " +company+ "is "+totalWage );
+					return totalWage;
 				}
-				EmployeeWageCal();
-			}
+					public static void main(String args[])
+					{
+						calculateEmpWage("A-Company",10,8,12,20,80);
+						calculateEmpWage("D-Company",8,4,8,30,90);
+					}
 
 
-			public static void main(String args[])
-			{
-
-				OopsEmpWage emp1=new OopsEmpWage();
-				emp1.EmpCheck();
-
-			}
 }
