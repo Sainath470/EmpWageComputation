@@ -20,7 +20,7 @@ public class OopsEmpWage
 			public void EmpCheck()
 			{
 				int WorkingDays=0;
-				while(WorkingDays<=TotalWorkingDays)
+				while((WorkingDays<=TotalWorkingDays)&&(WorkingHrs<100))
 				{
 					WorkingDays++;
 					int check=attendance();
