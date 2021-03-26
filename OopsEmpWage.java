@@ -16,6 +16,13 @@ public class OopsEmpWage
 				return attend;
 			}
 
+			public static void EmployeeWageCal()
+			{
+
+				System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
+
+			}
+
 
 			public void EmpCheck()
 			{
@@ -45,8 +52,7 @@ public class OopsEmpWage
 									break;
 					}
 				}
-				System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
-
+				EmployeeWageCal();
 			}
 
 
