@@ -28,18 +28,16 @@ public class OopsEmpWage
 					switch(check)
 					{
 							case 0:
-									System.out.println("Employee is Present on "+WorkingDays+" Day");
 									WorkingHrs+=Full_Time;
 									break;
 
 
 							case 1:
-									System.out.println("Employee is present and done part time work on "+WorkingDays+" Day");
-									WorkingHrs+=Full_Time;
+									WorkingHrs+=Part_Time;
 									break;
 
 							case 2:
-									System.out.println("Employee is Absent on "+WorkingDays+" Day");
+									System.out.println("Employee is Absent");
 									break;
 
 							default:
